@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Who's that girl?</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Shrikhand&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(120deg, #0c1424, #1a2b47);
+  color: #eaeaf0;
+  overflow-x: hidden;
+}
+
+/* LINKS */
+a {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(10,15,25,0.6);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: "Shrikhand";
+  font-size: 22px;
+}
+
+nav div {
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  white-space: nowrap;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 140px 10% 80px;
+  gap: 60px;
+}
+
+/* HERO TEXT */
+.hero-text h1 {
+  font-family: "Playfair Display";
+  font-size: 80px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  color: #b8c0d4;
+  max-width: 350px;
+}
+
+.music-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  aling-items: flex-start;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+
+  cursor: pointer;
+  width: 260px; /* this makes it a rectangle */
+  transition: 0.2s ease;
+}
+
+.track:hover {
+  transform: translateX(4px);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.play-button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.12);
+  font-size: 12px;
+}
+
+.track-info {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+}
+
+.collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  align-items: center;
+  zoom: 0.7;
+}
+
+/* LEFT COLUMN */
+.col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* RIGHT COLUMN */
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* IMAGES */
+.img {
+  width: 100%;
+  height: 260px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* SIZE BALANCE */
+.big {
+  height: 420px;
+}
+
+.medium {
+  height: 280px;
+}
+/* SECTIONS */
+section {
+  padding: 100px 10%;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.08);
+}
+
+/* FASHION */
+.fashion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.fashion-grid img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+/* MOODBOARD */
+
+.moodboard {
+  display: flex;
+ grid-template-columns: repeat(4, fr);
+  justify-content: center;
+  gap: 1px;
+  margin-top: 30px;
+}
+
+/* moodboard images */
+
+.moodboard {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* ALL IMAGES SAME SIZE */
+.moodboard img {
+  flex: 0 0 auto;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  transition: 0.3s ease;
+}
+
+
+.moodboard img:nth-child(odd) {
+  transform: translateY(-15px);
+}
+
+.moodboard img:nth-child(even) {
+  transform: translateY(15px);
+}
+
+/* ONLY MOVE POSITION */
+.moodboard img:nth-child(even) {
+  margin-top: 55px;
+}
+
+.moodboard img:hover {
+  transform: translateY(-6px);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .img.large {
+    width: 240px;
+  }
+
+  .img.medium {
+    width: 200px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Who’s that girl?</div>
+
+  <div>
+    <a href="#home">Home</a>
+    <a href="#fashion">Fashion</a>
+    <a href="#moodboard">Moodboard</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="hero-text">
+    <h1>
+      Too glam<br>
+      to give<br>
+      a damn.
+    </h1>
+
+    <p>
+      an editorial archive of fashion identity and internet aesthetics
+    </p>
+    
+  <div class="music-strip">
+
+<div class="track" onclick="window.open('https://www.youtube.com/watch?v=WDswiT87oo8', '_blank')">
+
+  <div class="play-button">▶</div>
+
+  <div class="track-info">
+    Girls and Boys —Blur
+  </div>
+
+</div>
+
+
+<div class="track" onclick="window.open('https://www.youtube.com/watch?v=wjNln9mXuTI', '_blank')">
+
+  <div class="play-button">▶</div>
+
+  <div class="track-info">
+    Deceptacon — Le Tigre
+  </div>
+
+</div>
+
+<div class="track" onclick="window.open('https://www.youtube.com/watch?v=3dm_5qWWDV8', '_blank')">
+
+  <div class="play-button">▶</div>
+
+  <div class="track-info">
+     Hysteria— Muse
+  </div>
+
+</div>
+
+<div class="track" onclick="window.open('https://www.youtube.com/watch?v=F7sGJVUrkjQ', '_blank')">
+
+  <div class="play-button">▶</div>
+
+  <div class="track-info">
+    Rude— Hearts2Hearts
+  </div>
+
+</div>
+
+
+<div class="track" onclick="window.open('https://www.youtube.com/watch?v=U6BDbXIah-Y', '_blank')">
+
+  <div class="play-button">▶</div>
+
+  <div class="track-info">
+    RedRed — Cortis
+  </div>
+
+</div>
+
+
+<div class="track" onclick="window.open('https://www.youtube.com/watch?v=NOiyDlWl534', '_blank')">
+
+  <div class="play-button">▶</div>
+
+  <div class="track-info">
+    Catch Catch — Yena
+  </div>
+
+ 
+
+</div>
+
+</div>
+  </div>
+
+  <!-- COLLAGE -->
+  
+
+<div class="collage">
+
+  <div class="col-left">
+    <img src="image38.jpg" class="img big">
+    <img src="image2.jpg" class="img medium">
+  </div>
+
+  <div class="col-right">
+    <img src="image33.jpg" class="img medium">
+    <img src="image20.jpg" class="img big">
+  </div>
+
+</div>
+
+</section>
+
+<!-- MAGAZINE ISSUES -->
+<section>
+
+  <h2>Magazine Issues</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <a href="./issue1.pdf" target="_blank">
+        <h3>Issue 01 — Clean Girl</h3>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="./issue2.pdf" target="_blank">
+        <h3>Issue 02 — How to be a Fashionista</h3>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FASHION -->
+<section id="fashion">
+
+  <h2>Fashion</h2>
+
+  <div class="fashion-grid">
+    <img src="image16.jpg">
+    <img src="image15.jpg">
+    <img src="image14.jpg">
+    <img src="image24.jpg">
+  </div>
+
+</section>
+
+<!-- MOODBOARD -->
+<section id="moodboard">
+
+  <h2>Moodboard</h2>
+
+
+<div class="moodboard">
+  <img src="image36.jpg">
+  <img src="image23.jpg">
+  <img src="image26.jpg">
+  <img src="image40.jpg">
+  <img src="image44.jpg">
+  <img src="image31.jpg">
+  <img src="image41.jpg">
+  <img src="image25.jpg">
+   
+</div>
+
+</section>
+
+</body>
+</html>
